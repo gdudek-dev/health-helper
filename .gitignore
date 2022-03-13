@@ -1,0 +1,8 @@
+/health-helper-api/target/
+/health-helper-api/.idea/
+/health-helper-app/node_modules/
+/health-helper-app/.vscode/
+/health-helper-app/.angular/
+/health-helper-app/dist
+/health-helper-api/health-helper-api.iml
+.DS_Store
