@@ -1,5 +1,6 @@
 /health-helper-api/target/
 /health-helper-api/.idea/
+/health-helper-api/.jpb/
 /health-helper-app/node_modules/
 /health-helper-app/.vscode/
 /health-helper-app/.angular/
