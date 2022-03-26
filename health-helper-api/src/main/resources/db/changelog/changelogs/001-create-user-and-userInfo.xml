@@ -33,13 +33,10 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="age" type="int">
-                <constraints nullable="false"/>
             </column>
             <column name="gender" type="varchar(30)">
-                <constraints nullable="false"/>
             </column>
             <column name="height" type="int">
-                <constraints nullable="false"/>
             </column>
         </createTable>
     </changeSet>
