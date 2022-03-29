@@ -18,31 +18,30 @@
     flex-direction: row;
     flex-wrap: wrap;
     padding-top: 15vh;
-    margin-left: 7vw;
+    margin-left: 9vw;
 
     .sign-in {
-        margin-right: 2vw;
-        margin-bottom: 5vh;
+        padding-bottom: 4vh;
         display: flex;
         flex-direction: column;
         background-color: rgb(104, 237, 203);
         border-radius: 3vw;
-        width: 25%;
-        height: 67vh;
+        width: 25vw;
+        max-height: 90vh;
         color: white;
         align-items: center;
 
         h1 {
             font-weight: bold;
-            margin-top: 7vh;
+            margin-top: 3vw;
             font-size: 3vw;
         }
 
         label {
-            margin-top: 6vh;
+            margin-top: 2.5vw;
             font-weight: bold;
             align-self: baseline;
-            margin-left: 4vw;
+            margin-left: 4.4vw;
             font-size: 1vw;
         }
 
