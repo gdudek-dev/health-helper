@@ -12,6 +12,8 @@
     "enter_first_name": "Enter first name",
     "enter_last_name": "Enter last name",
     "enter_password": "Enter password",
-    "enter_email": "Enter email"
+    "enter_email": "Enter email",
 
+    "valid_email": "Enter valid email",
+    "valid_password": "Password must be atleast 6 characters long"
 }
