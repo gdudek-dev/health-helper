@@ -1,0 +1,20 @@
+<div class="background"></div>
+<div class="container">
+    <div class="sign-in">
+        <h1>Sign in</h1>
+        <label>Email</label>
+        <input type="email" [(ngModel)]="email" class="input-email" name="email">
+        <label style="margin-top: 2vh;">Password</label>
+        <input type="password" [(ngModel)]="password" class="input-pass" name="psw">
+        <div class="remember-me">
+                <input type="checkbox"> Do not logout
+        </div>
+        <div class="sign-buttons">
+            <button type="button" (click)="signUp()">Sign up</button>
+            <button type="button" (click)="signIn()">Sign in</button>
+        </div>
+    </div>
+    <div class="logo">
+        <img src="../../../assets/logo/logo.svg" style="width: 100%; height: auto;">
+    </div>
+</div>
