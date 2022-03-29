@@ -15,8 +15,8 @@
         <input type="password" class="form-input" formControlName = "password"
             placeholder="{{'enter_password' | translate}}">
         <div class="sign-buttons">
-            <button type="button" >{{'cancel' | translate}}</button>
-            <button type="button" >{{'sign_up_button' | translate}}</button>
+            <button type="button" (click)="cancel()" >{{'cancel' | translate}}</button>
+            <button type="button" (click)="signUp()" >{{'sign_up_button' | translate}}</button>
         </div>
     </form>
     <div class="logo">
