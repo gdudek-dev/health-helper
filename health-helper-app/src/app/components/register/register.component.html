@@ -1,0 +1,25 @@
+<div class="background"></div>
+<div class="container">
+    <form class="sign-up-form" [formGroup]="registerForm">
+        <h1>Sign up</h1>
+        <label>First Name*</label>
+        <input type="text" class="form-input" formControlName = "firstName" 
+            placeholder="Enter your first name">
+        <label style="margin-top: 2vh;">Last Name*</label>
+        <input type="password" class="form-input" formControlName = "lastName"
+            placeholder="Enter your last name">
+        <label style="margin-top: 2vh;">Email*</label>
+        <input type="email" class="form-input" formControlName = "email"
+            placeholder="Enter your email">
+        <label style="margin-top: 2vh;">Password*</label>
+        <input type="password" class="form-input" formControlName = "password"
+            placeholder="Enter your password"    >
+        <div class="sign-buttons">
+            <button type="button" >Cancel</button>
+            <button type="button" >Sign up</button>
+        </div>
+    </form>
+    <div class="logo">
+        <img src="../../../assets/logo/logo.svg" style="width: 100%; height: auto;">
+    </div>
+</div>
