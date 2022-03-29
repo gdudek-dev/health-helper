@@ -1,0 +1,16 @@
+{
+    "sign_in": "Zaloguj się",
+    "sign_up": "Załóż konto",
+    "sign_up_button": "Potwierdź",
+    "email": "Email",
+    "password": "Hasło",
+    "remember_me": "Nie wylogowuj",
+    "first_name": "Imię",
+    "last_name": "Nazwisko",
+    "cancel": "Anuluj",
+
+    "enter_first_name": "Wprowadź imię",
+    "enter_last_name": "Wprowadź nazwisko",
+    "enter_password": "Wprowadź hasło",
+    "enter_email": "Wprowadź email"
+}

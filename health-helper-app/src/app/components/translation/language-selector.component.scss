@@ -1,0 +1,13 @@
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+.mat-option {
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+}
