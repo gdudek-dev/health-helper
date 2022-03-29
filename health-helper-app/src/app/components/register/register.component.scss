@@ -31,6 +31,12 @@
         color: white;
         align-items: center;
 
+        .error {
+            font-size: 1vw;
+            align-self: baseline;
+            margin-left: 4.4vw;
+        }
+
         h1 {
             font-weight: bold;
             margin-top: 3vw;
