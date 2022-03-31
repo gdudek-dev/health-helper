@@ -1,6 +1,5 @@
 package com.gdudek.healthhelperapi.service.user.impl;
 
-import com.gdudek.healthhelperapi.domain.user.UserEntity;
 import com.gdudek.healthhelperapi.dto.user.UserDTO;
 import com.gdudek.healthhelperapi.repository.user.UserRepository;
 import com.gdudek.healthhelperapi.service.user.UserService;
