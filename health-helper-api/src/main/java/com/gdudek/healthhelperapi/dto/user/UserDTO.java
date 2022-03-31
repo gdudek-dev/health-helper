@@ -8,8 +8,7 @@ import lombok.Setter;
 @Setter
 @Builder
 public class UserDTO {
-
-    private Long Id;
+    private Long id;
     private String firstName;
     private String lastName;
     private String email;

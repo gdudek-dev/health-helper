@@ -8,10 +8,8 @@ import lombok.Setter;
 @Setter
 @Builder
 public class UserInfoDTO {
-
-    private Long Id;
+    private Long id;
     private int age;
     private String gender;
     private float height;
-    private UserDTO userDTO;
 }
