@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user/user.model';
+import { ToastService } from 'src/app/services/toast.service';
+import { TranslationService } from 'src/app/services/translation/translation-service';
 import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
@@ -14,7 +16,10 @@ export class RegisterComponent implements OnInit {
   public registerForm!: FormGroup;
   public formSubmitted: boolean = false;
 
-  constructor(private router: Router, private userService: UserService) { }
+  constructor(private router: Router,
+    private userService: UserService,
+    private toastService: ToastService,
+    private translationService: TranslationService) { }
 
   ngOnInit(): void {
     this.initRegisterForm();
@@ -60,15 +65,26 @@ export class RegisterComponent implements OnInit {
       user.email = this.registerForm.get('email')?.value;
       user.password = this.registerForm.get('password')?.value;
 
-      console.log(user);
+
       this.userService.register(user).subscribe({
         next: () => {
-          console.log("succesfull")
+          this.toastService.showNotification(
+            this.translationService.getTranslation("registered_successfully")!,
+            this.translationService.getTranslation("cancel")!,
+            "success"
+          );
           this.router.navigate(['login']);
         },
         error: error => {
-          console.error('There was an error!', error.error);
-          //TODO TOAST SERVICE
+          if (error.status === 0) {
+            this.toastService.showNotification(
+              this.translationService.getTranslation("unable_to_connect")!,
+              this.translationService.getTranslation("cancel")!,
+              "error");
+          } else {
+            this.toastService.showNotification(error.error, "Close", "error");
+            //TO DO TRANSLATE ERRORS, MAYBE USE ID IN BACKEND
+          }
         }
       });
     }
