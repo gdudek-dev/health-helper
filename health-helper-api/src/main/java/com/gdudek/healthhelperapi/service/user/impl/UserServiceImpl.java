@@ -1,11 +1,17 @@
 package com.gdudek.healthhelperapi.service.user.impl;
 
+import com.gdudek.healthhelperapi.domain.user.UserEntity;
 import com.gdudek.healthhelperapi.dto.user.UserDTO;
+import com.gdudek.healthhelperapi.dto.user.UserInfoDTO;
+import com.gdudek.healthhelperapi.exception.user.EmailAlreadyTakenException;
 import com.gdudek.healthhelperapi.repository.user.UserRepository;
 import com.gdudek.healthhelperapi.service.user.UserService;
 import com.gdudek.healthhelperapi.service.user.mapper.UserMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +22,8 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final UserMapper userMapper;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public UserServiceImpl(UserRepository userRepository, UserMapper userMapper) {
         this.userRepository = userRepository;
@@ -30,5 +38,22 @@ public class UserServiceImpl implements UserService {
     @Override
     public Page<UserDTO> findAllPageable(Pageable pageable) {
         return userRepository.findAll(pageable).map(userMapper::toDTO);
+    }
+
+    @Override
+    public ResponseEntity<UserDTO> register(UserDTO userDTO) {
+        if (isEmailTaken(userDTO.getEmail())) {
+            throw new EmailAlreadyTakenException();
+        }
+        userDTO.setId(null);
+        userDTO.setPassword(passwordEncoder.encode(userDTO.getPassword()));
+        userDTO.setUserInfoDTO(UserInfoDTO.builder().build());
+        UserEntity dbUser = userMapper.fromDTO(userDTO);
+        userRepository.save(dbUser);
+        return ResponseEntity.ok(userDTO);
+    }
+
+    private boolean isEmailTaken(String email) {
+        return userRepository.existsByEmail(email);
     }
 }

@@ -6,8 +6,10 @@ import com.gdudek.healthhelperapi.dto.user.UserDTO;
 import com.gdudek.healthhelperapi.repository.GenericRepository;
 import com.gdudek.healthhelperapi.service.GenericMapper;
 import com.gdudek.healthhelperapi.service.user.UserService;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,14 +27,17 @@ public class UserController extends GenericController<UserEntity, UserDTO> {
     }
 
     @GetMapping("/page")
-    @ResponseBody
     public Page<UserDTO> getPage(Pageable pageable) {
         return userService.findAllPageable(pageable);
     }
 
     @GetMapping("")
-    @ResponseBody
     public List<UserDTO> getAll() {
         return userService.findAll();
+    }
+
+    @PostMapping("/register")
+    public ResponseEntity<UserDTO> register(@RequestBody UserDTO userDTO) {
+        return userService.register(userDTO);
     }
 }
