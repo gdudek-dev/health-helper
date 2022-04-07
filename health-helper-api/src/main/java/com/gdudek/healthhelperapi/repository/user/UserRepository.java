@@ -16,4 +16,6 @@ public interface UserRepository extends GenericRepository<UserEntity> {
 
     @Query(value = "select u from UserEntity u inner join UserInfo ui on u.userInfo.id = ui.id")
     List<UserEntity> findAll();
+
+    boolean existsByEmail(String email);
 }

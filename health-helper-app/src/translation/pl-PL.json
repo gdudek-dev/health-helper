@@ -8,12 +8,12 @@
     "first_name": "Imię",
     "last_name": "Nazwisko",
     "cancel": "Anuluj",
-
     "enter_first_name": "Wprowadź imię",
     "enter_last_name": "Wprowadź nazwisko",
     "enter_password": "Wprowadź hasło",
     "enter_email": "Wprowadź email",
-
     "valid_email": "Wprowadź poprawny email",
-    "valid_password": "Hasło musi zawierać przynajmniej 6 znaków"
+    "valid_password": "Hasło musi zawierać przynajmniej 6 znaków",
+    "registered_successfully": "Zarejestrowano",
+    "unable_to_connect": "Błąd połączenia z serwerem"
 }
