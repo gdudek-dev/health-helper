@@ -13,5 +13,7 @@ public class UserDTO {
     private String lastName;
     private String email;
     private String password;
+    private SessionDTO session;
+    private Boolean isAdmin;
     private UserInfoDTO userInfoDTO;
 }

@@ -48,6 +48,7 @@ public class UserServiceImpl implements UserService {
         userDTO.setId(null);
         userDTO.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         userDTO.setUserInfoDTO(UserInfoDTO.builder().build());
+        userDTO.setIsAdmin(false);
         UserEntity dbUser = userMapper.fromDTO(userDTO);
         userRepository.save(dbUser);
         return ResponseEntity.ok(userDTO);

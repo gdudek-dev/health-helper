@@ -1,5 +1,6 @@
 package com.gdudek.healthhelperapi.domain.user;
 
+import com.gdudek.healthhelperapi.domain.session.SessionEntity;
 import lombok.*;
 
 import javax.persistence.*;
@@ -33,4 +34,11 @@ public class UserEntity {
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_info_id", referencedColumnName = "id")
     private UserInfo userInfo;
+
+    @Column(name = "is_admin")
+    private Boolean isAdmin;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "session_id")
+    private SessionEntity session;
 }
