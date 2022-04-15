@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 public class UserMapper implements GenericMapper<UserEntity, UserDTO> {
 
     private final UserInfoMapper userInfoMapper = new UserInfoMapper();
+    private final SessionMapper sessionMapper = new SessionMapper();
 
     @Override
     public UserEntity fromDTO(UserDTO dtoEntity) {
@@ -17,6 +18,7 @@ public class UserMapper implements GenericMapper<UserEntity, UserDTO> {
                 .lastName(dtoEntity.getLastName())
                 .email(dtoEntity.getEmail())
                 .password(dtoEntity.getPassword())
+                .isAdmin(dtoEntity.getIsAdmin())
                 .userInfo(userInfoMapper.fromDTO(dtoEntity.getUserInfoDTO()))
                 .build();
     }
@@ -28,6 +30,8 @@ public class UserMapper implements GenericMapper<UserEntity, UserDTO> {
                 .lastName(dbEntity.getLastName())
                 .email(dbEntity.getEmail())
                 .password(dbEntity.getPassword())
+                .isAdmin(dbEntity.getIsAdmin())
+                .session(dbEntity.getSession() != null ? sessionMapper.toDTO(dbEntity.getSession()) : null)
                 .userInfoDTO(userInfoMapper.toDTO(dbEntity.getUserInfo()))
                 .build();
     }
