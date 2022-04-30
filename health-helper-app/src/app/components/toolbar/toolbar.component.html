@@ -1,0 +1,27 @@
+<mat-toolbar>
+    <mat-toolbar-row class="nav-menu">
+        <img class="menu-item" class="logo" src="../../../assets/logo/logo.svg">
+        <a class="menu-item" mat-button [routerLink]=""> Home </a>
+        <a class="menu-item" mat-button [routerLink]=""> Personal Health </a>
+        <a class="menu-item" mat-button [routerLink]=""> Supplements </a>
+        <a class="menu-item" mat-button [routerLink]=""> Exercises </a>
+        <span class="spacer"></span>
+        <button class="menu-item" mat-icon-button [routerLink]="">
+            <mat-icon>settings</mat-icon>
+        </button>
+        <button class="menu-item" mat-icon-button [routerLink]="">
+            <mat-icon>logout</mat-icon>
+        </button>
+        <button class="hamburger" mat-button [matMenuTriggerFor]="menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item [routerLink]="">Home</button>
+            <button mat-menu-item [routerLink]="">Personal Health</button>
+            <button mat-menu-item [routerLink]="">Supplements</button>
+            <button mat-menu-item [routerLink]="">Exercises</button>
+            <button mat-menu-item [routerLink]="">Settings <mat-icon>settings</mat-icon></button>
+            <button mat-menu-item [routerLink]="">Logout <mat-icon>logout</mat-icon></button>
+        </mat-menu>
+    </mat-toolbar-row>
+</mat-toolbar>
