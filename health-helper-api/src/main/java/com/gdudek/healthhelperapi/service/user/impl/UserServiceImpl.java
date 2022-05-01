@@ -3,6 +3,7 @@ package com.gdudek.healthhelperapi.service.user.impl;
 import com.gdudek.healthhelperapi.domain.user.UserEntity;
 import com.gdudek.healthhelperapi.dto.user.UserDTO;
 import com.gdudek.healthhelperapi.dto.user.UserInfoDTO;
+import com.gdudek.healthhelperapi.exception.NotFoundException;
 import com.gdudek.healthhelperapi.exception.user.EmailAlreadyTakenException;
 import com.gdudek.healthhelperapi.repository.user.UserRepository;
 import com.gdudek.healthhelperapi.service.user.UserService;
@@ -52,6 +53,13 @@ public class UserServiceImpl implements UserService {
         UserEntity dbUser = userMapper.fromDTO(userDTO);
         userRepository.save(dbUser);
         return ResponseEntity.ok(userDTO);
+    }
+
+    public UserDTO getLoggedUser(String sessionKey) {
+        return userMapper.toDTO(
+                userRepository
+                        .getUserBySessionKey(sessionKey)
+                        .orElseThrow(NotFoundException::new));
     }
 
     private boolean isEmailTaken(String email) {

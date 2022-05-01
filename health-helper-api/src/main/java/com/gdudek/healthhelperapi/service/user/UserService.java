@@ -12,4 +12,5 @@ public interface UserService {
     List<UserDTO> findAll();
     Page<UserDTO> findAllPageable(Pageable pageable);
     ResponseEntity<UserDTO> register(UserDTO userDTO);
+    UserDTO getLoggedUser(String sessionKey);
 }
