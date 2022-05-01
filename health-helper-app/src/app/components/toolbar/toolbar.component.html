@@ -9,7 +9,7 @@
         <button class="menu-item" mat-icon-button [routerLink]="">
             <mat-icon>settings</mat-icon>
         </button>
-        <button class="menu-item" mat-icon-button [routerLink]="">
+        <button class="menu-item" mat-icon-button (click)="logout()">
             <mat-icon>logout</mat-icon>
         </button>
         <button class="hamburger" mat-button [matMenuTriggerFor]="menu">
@@ -21,7 +21,7 @@
             <button mat-menu-item [routerLink]="">{{'supplements' | translate}}</button>
             <button mat-menu-item [routerLink]="">{{'exercises' | translate}}</button>
             <button mat-menu-item [routerLink]="">{{'settings' | translate}} <mat-icon>settings</mat-icon></button>
-            <button mat-menu-item [routerLink]="">{{'logout' | translate}} <mat-icon>logout</mat-icon></button>
+            <button mat-menu-item (click)="logout()">{{'logout' | translate}} <mat-icon>logout</mat-icon></button>
         </mat-menu>
     </mat-toolbar-row>
 </mat-toolbar>
