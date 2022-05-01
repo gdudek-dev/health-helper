@@ -1,19 +1,26 @@
 <app-toolbar></app-toolbar>
 <div class="background"></div>
+<div class="background-img"></div>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col">
             <div class="left-col">
                 <p>{{'welcome' | translate}}</p>
                 <p>{{userFirstName}}</p>
             </div>
         </div>
-        <div class="col" min-vh-100>
+        <div class="col">
             <div class="right-col">
-                <p>{{'quote' | translate}}</p>
-                <p class="quote">"Make eating fruits and vegetables a priority. This is so simple and beneficial, yet
-                    most people
-                    don’t do it.” – Nia Shanks</p>
+                <div class="quote-card">
+                    <div class="quote">
+                        <p class="quote-title">{{'quote' | translate}}</p>
+                        <p class="quote">"Make eating fruits and vegetables a priority. This is so simple and
+                            beneficial,
+                            yet
+                            most people
+                            don’t do it.” – Nia Shanks</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
