@@ -15,5 +15,13 @@
     "valid_email": "Enter valid email",
     "valid_password": "Password must be atleast 6 characters long",
     "registered_successfully": "Registered successfully",
-    "unable_to_connect": "Unable to connect to server"
+    "unable_to_connect": "Server error, pls try again later",
+    "home": "Home",
+    "personal_health": "Personal Health",
+    "supplements": "Supplements",
+    "exercises": "Exercises",
+    "settings": "Settings",
+    "logout": "Logout",
+    "quote": "Quote for You",
+    "welcome": "Welcome"
 }

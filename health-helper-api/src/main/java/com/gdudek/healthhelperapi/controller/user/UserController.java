@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -39,5 +40,11 @@ public class UserController extends GenericController<UserEntity, UserDTO> {
     @PostMapping("/register")
     public ResponseEntity<UserDTO> register(@RequestBody UserDTO userDTO) {
         return userService.register(userDTO);
+    }
+
+    @GetMapping("/session/logged")
+    public UserDTO getLoggedUser(HttpServletRequest httpServletRequest) {
+       String key =  httpServletRequest.getHeader("Authorization");
+       return userService.getLoggedUser(key);
     }
 }

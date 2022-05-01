@@ -15,5 +15,13 @@
     "valid_email": "Wprowadź poprawny email",
     "valid_password": "Hasło musi zawierać przynajmniej 6 znaków",
     "registered_successfully": "Zarejestrowano",
-    "unable_to_connect": "Błąd połączenia z serwerem"
+    "unable_to_connect": "Błąd połączenia z serwerem",
+    "home": "Strona Główna",
+    "personal_health": "Zdrowie Osobiste",
+    "supplements": "Suplementy",
+    "exercises": "Ćwiczenia",
+    "settings": "Ustawienia",
+    "logout": "Wyloguj",
+    "quote": "Cytat dla Ciebie",
+    "welcome": "Witaj"
 }

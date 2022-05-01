@@ -37,8 +37,7 @@ export class LoginComponent implements OnInit {
     ) {
       this.authService.isSessionKeyIsAlive().subscribe((res) => {
         if (res) {
-          console.log("user logged")
-          //TODO go to main page
+          this.router.navigate(['home']);
         }
       });
     }
@@ -62,7 +61,7 @@ export class LoginComponent implements OnInit {
           res.isAdmin,
           localStorage
         );
-        //TODO navigate to main page
+        this.router.navigate(['home'])
       },
       (error) => {
         if (error.status === 0) {

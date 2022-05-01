@@ -17,4 +17,7 @@ export class UserService extends BaseCrudService<User> {
     return this.http.post<User>(this.apiUrl + '/register', user);
   }
 
+  public getUserBySessionKey(): Observable<User> {
+    return this.http.get<User>(this.apiUrl + '/session/logged');
+  }
 }
