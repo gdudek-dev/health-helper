@@ -2,7 +2,6 @@
     font-family: 'Roboto', sans-serif;
 }
 
-
 .background {
     position: absolute;
     top: 0;
@@ -10,98 +9,139 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: linear-gradient(71.96deg, #00CACA 0%, #68EDCB 75.99%, #68EDCB 83%, #00BEFF 112.23%);
+    background: linear-gradient(71.96deg, #00CACA 0%, #68EDCB 80.99%, #68EDCB 90%, #00BEFF 112.23%);
 }
 
-.container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-top: 12vh;
-    margin-left: 9vw;
+.container-fluid {
 
-    .sign-in {
-        padding-bottom: 15vh;
-        display: flex;
-        flex-direction: column;
-        background-color: rgb(104, 237, 203);
-        border-radius: 3vw;
-        width: 25vw;
-        max-height: 90vh;
-        color: white;
-        align-items: center;
+    .row {
+        text-align: center;
 
-        h1 {
-            font-weight: bold;
-            margin-top: 3vw;
-            font-size: 3vw;
-        }
-
-        label {
-            margin-top: 2.5vw;
-            font-weight: bold;
-            align-self: baseline;
-            margin-left: 4.4vw;
-            font-size: 1vw;
-        }
-
-        .input-email, .input-pass {
-            height: 2em;
-            margin-top: 0.5vh;
-            border-radius: 1.5vh;
-            border: none;
-            background: rgba(249, 249, 249, 0.81);
-            width: 58%;
-            padding-left: 0.5vw;
-            padding-right: 1.8vw;
-            font-size: 1vw;
-        }
-
-        .remember-me {          
-            margin-top: 1vh;
-            align-self: baseline;
-            margin-left: 4vw;
-            font-size: 1vw;
-
-            input {
-                width: 1vw;
-                height: 1vw;
-            }
-        }
-
-        .sign-buttons{
+        .sign-in {
+            margin-top: 8em;
+            margin-left: 10em;
             display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
+            background-color: rgb(104, 237, 203);
+            border-radius: 3em;
+            width: 25em;
+            height: 35em;
+            color: white;
             align-items: center;
-            margin-top: 4vw;
-            margin-right: 1vw;
-            margin-left: 1vw;
-            button {
-                margin: 6px;
-                width: 8vw;
-                height: 2vw;
-                font-size: 1vw;
-                border-radius: 5em; 
-                border: none;
-                font-weight: 700;
-                background: rgb(0, 202, 202);
-                color: #FFFFFF;
-                cursor: pointer;
-            }
-            button:hover {
-                background-color: #FFFFFF;
-                color: rgb(0, 202, 202);
-            }     
 
+            h1 {
+                font-weight: bold;
+                margin-top: 2em;
+                font-size: 3.5em;
+            }
+
+            label {
+                margin-top: 1em;
+                font-weight: bold;
+                align-self: baseline;
+                margin-left: 4em;
+                font-size: 1em;
+            }
+
+            .input-email,
+            .input-pass {
+                height: 2em;
+                border-radius: 1em;
+                border: none;
+                background: rgba(249, 249, 249, 0.81);
+                width: 70%;
+                padding-left: 0.5vw;
+                padding-right: 1.8vw;
+                font-size: 1em;
+            }
+
+            .remember-me {
+                margin-top: 1em;
+                align-self: baseline;
+                margin-left: 4em;
+                font-size: 1em;
+
+                input {
+                    width: 1em;
+                    height: 1em;
+                }
+            }
+
+            .sign-buttons {
+                margin-top: 4em;
+                margin-right: 1em;
+                margin-left: 1em;
+
+                button {
+                    margin: 6px;
+                    width: 8em;
+                    height: 2em;
+                    font-size: 1.1em;
+                    border-radius: 5em;
+                    border: none;
+                    font-weight: 700;
+                    background: rgb(0, 202, 202);
+                    color: #FFFFFF;
+                    cursor: pointer;
+                }
+
+                button:hover {
+                    background-color: #FFFFFF;
+                    color: rgb(0, 202, 202);
+                }
+            }
+        }
+
+        .logo {
+            margin-right: 4em;
+            margin-top: 18em;
+            width: 55em;
         }
     }
+}
 
-    .logo {
-        margin-top: 17vh;
-        margin-left: 5vw;
-        margin-bottom: 15vh;
-        width: 60vw;          
+@media(max-width:1400px) {
+    #logo {
+        width: 40em
+    }
+}
+
+
+@media(max-width:1180px) {
+    #logo {
+        width: 30em
+    }
+}
+
+@media(max-width:1010px) {
+    #logo {
+        position: absolute;
+        top: -16em;
+        left: 14em;
+        width: 20em;
+    }
+
+    #background {
+        background: linear-gradient(71.96deg, #00CACA 10%, #68EDCB 90.99%, #68EDCB 120%, #00BEFF 130.23%);
+    }
+}
+
+@media(max-width:580px) {
+    #logo {
+        left: 8em;
+    }
+
+    #sign-in {
+        margin-left: 5em;
+    }
+}
+
+@media(max-width:450px) {
+    #logo {
+        left: 5em;
+    }
+
+    #sign-in {
+        margin-left: 2em;
     }
 }
