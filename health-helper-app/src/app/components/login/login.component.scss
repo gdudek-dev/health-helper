@@ -144,4 +144,18 @@
     #sign-in {
         margin-left: 2em;
     }
+
+    #background {
+        background: linear-gradient(71.96deg, #00CACA 10%, #68EDCB 100.99%, #68EDCB 120%, #00BEFF 130.23%);
+    }
+}
+
+@media(max-width:400px) {
+    #logo {
+        left: 2em;
+    }
+
+    #sign-in {
+        margin-left: 0em;
+    }
 }
