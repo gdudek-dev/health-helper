@@ -1,36 +1,43 @@
-<div class="background"></div>
-<div class="container">
-    <form class="sign-up-form" [formGroup]="registerForm">
-        <h1>{{'sign_up' | translate}}</h1>
-        <label>{{'first_name' | translate}}*</label>
-        <input type="text" class="form-input" formControlName="firstName"
-            placeholder="{{'enter_first_name' | translate}}">
-        <div class="error" *ngIf="firstName && firstName.invalid && (firstName.touched || formSubmitted)">
-            <div style="color: red">{{'enter_first_name' | translate}}</div>
+<div id="background" class="background"></div>
+<div class="container-fluid h-100">
+    <div class="row h-100">
+        <div class="col">
+            <form id="sign-up" class="sign-up-form" [formGroup]="registerForm">
+                <h1>{{'sign_up' | translate}}</h1>
+                <label>{{'first_name' | translate}}*</label>
+                <input type="text" class="form-input" formControlName="firstName"
+                    placeholder="{{'enter_first_name' | translate}}">
+                <div class="error" *ngIf="firstName && firstName.invalid && (firstName.touched || formSubmitted)">
+                    <div style="color: red">{{'enter_first_name' | translate}}</div>
+                </div>
+                <label style="margin-top: 2vh;">{{'last_name' | translate}}*</label>
+                <input type="text" class="form-input" formControlName="lastName"
+                    placeholder="{{'enter_last_name' | translate}}">
+                <div class="error" *ngIf="(lastName && lastName.invalid) && (lastName.touched || formSubmitted)">
+                    <div style="color: red">{{'enter_last_name' | translate}}</div>
+                </div>
+                <label style="margin-top: 2vh;">{{'email' | translate}}*</label>
+                <input type="email" class="form-input" formControlName="email"
+                    placeholder="{{'enter_email' | translate}}">
+                <div class="error" *ngIf="(email && email.invalid) && (email.touched || formSubmitted)">
+                    <div style="color: red">{{'valid_email' | translate}}</div>
+                </div>
+                <label style="margin-top: 2vh;">{{'password' | translate}}*</label>
+                <input type="password" class="form-input" formControlName="password"
+                    placeholder="{{'enter_password' | translate}}">
+                <div class="error" *ngIf="(password && password.invalid) && (password.touched || formSubmitted)">
+                    <div style="color: red">{{'valid_password' | translate}}</div>
+                </div>
+                <div class="sign-buttons">
+                    <button type="button" (click)="cancel()">{{'cancel' | translate}}</button>
+                    <button type="button" (click)="signUp()">{{'sign_up_button' | translate}}</button>
+                </div>
+            </form>
         </div>
-        <label style="margin-top: 2vh;">{{'last_name' | translate}}*</label>
-        <input type="text" class="form-input" formControlName="lastName"
-            placeholder="{{'enter_last_name' | translate}}">
-        <div class="error" *ngIf="(lastName && lastName.invalid) && (lastName.touched || formSubmitted)">
-            <div style="color: red">{{'enter_last_name' | translate}}</div>
+        <div class="col">
+            <div id="logo" class="logo">
+                <img src="../../../assets/logo/logo.svg" style="width: 100%; height: auto;">
+            </div>
         </div>
-        <label style="margin-top: 2vh;">{{'email' | translate}}*</label>
-        <input type="email" class="form-input" formControlName="email" placeholder="{{'enter_email' | translate}}">
-        <div class="error" *ngIf="(email && email.invalid) && (email.touched || formSubmitted)">
-            <div style="color: red">{{'valid_email' | translate}}</div>
-        </div>
-        <label style="margin-top: 2vh;">{{'password' | translate}}*</label>
-        <input type="password" class="form-input" formControlName="password"
-            placeholder="{{'enter_password' | translate}}">
-        <div class="error" *ngIf="(password && password.invalid) && (password.touched || formSubmitted)">
-            <div style="color: red">{{'valid_password' | translate}}</div>
-        </div>
-        <div class="sign-buttons">
-            <button type="button" (click)="cancel()">{{'cancel' | translate}}</button>
-            <button type="button" (click)="signUp()">{{'sign_up_button' | translate}}</button>
-        </div>
-    </form>
-    <div class="logo">
-        <img src="../../../assets/logo/logo.svg" style="width: 100%; height: auto;">
     </div>
 </div>

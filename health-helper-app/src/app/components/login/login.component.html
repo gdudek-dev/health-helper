@@ -1,21 +1,28 @@
-<div class="background"></div>
-<div class="container">
-    <div class="sign-in">
-        <h1>{{'sign_in' | translate}}</h1>
-        <label>{{'email' | translate}}</label>
-        <input type="email" [(ngModel)]="email" class="input-email" name="email">
-        <label style="margin-top: 2vh;">{{'password' | translate}}</label>
-        <input type="password" [(ngModel)]="password" class="input-pass" name="psw">
-        <div class="remember-me">
-            <input type="checkbox" [checked]="doNotLogout" (change)="doNotLogout = !doNotLogout">
-            {{'remember_me' | translate}}
+<app-language-selector></app-language-selector>
+<div id="background" class="background"></div>
+<div class="container-fluid h-100">
+    <div class="row h-100">
+        <div class="col">
+            <div id="sign-in" class="sign-in">
+                <h1>{{'sign_in' | translate}}</h1>
+                <label>{{'email' | translate}}</label>
+                <input type="email" [(ngModel)]="email" class="input-email" name="email">
+                <label style="margin-top: 2vh;">{{'password' | translate}}</label>
+                <input type="password" [(ngModel)]="password" class="input-pass" name="psw">
+                <div class="remember-me">
+                    <input type="checkbox" [checked]="doNotLogout" (change)="doNotLogout = !doNotLogout">
+                    {{'remember_me' | translate}}
+                </div>
+                <div class="sign-buttons">
+                    <button type="button" (click)="signUp()">{{'sign_up' | translate}}</button>
+                    <button type="button" (click)="signIn()">{{'sign_in' | translate}}</button>
+                </div>
+            </div>
         </div>
-        <div class="sign-buttons">
-            <button type="button" (click)="signUp()">{{'sign_up' | translate}}</button>
-            <button type="button" (click)="signIn()">{{'sign_in' | translate}}</button>
+        <div class="col">
+            <div id="logo" class="logo">
+                <img src="../../../assets/logo/logo.svg" style="width: 100%; height: auto;">
+            </div>
         </div>
-    </div>
-    <div class="logo">
-        <img src="../../../assets/logo/logo.svg" style="width: 100%; height: auto;">
     </div>
 </div>
