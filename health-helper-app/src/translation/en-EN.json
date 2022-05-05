@@ -23,5 +23,9 @@
     "settings": "Settings",
     "logout": "Logout",
     "quote": "Quote for You",
-    "welcome": "Welcome"
+    "welcome": "Welcome",
+    "profile": "Profile",
+    "security": "Security",
+    "language": "Language",
+    "help": "Help"
 }

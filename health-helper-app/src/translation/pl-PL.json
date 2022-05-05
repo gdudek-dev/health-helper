@@ -23,5 +23,9 @@
     "settings": "Ustawienia",
     "logout": "Wyloguj",
     "quote": "Cytat dla Ciebie",
-    "welcome": "Witaj"
+    "welcome": "Witaj",
+    "profile": "Profil",
+    "security": "Zabezpieczenia",
+    "language": "Język",
+    "help": "Pomoc"
 }
