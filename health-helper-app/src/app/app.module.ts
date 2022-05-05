@@ -22,7 +22,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SessionInterceptor } from './components/helpers/session-interceptor';
-import { SettingsComponent } from './components/settings/settings.component';
+import { SettingsComponent } from './components/user-settings/settings/settings.component';
+import { SelectLanguageComponent } from './components/user-settings/select-language/select-language.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SettingsComponent } from './components/settings/settings.component';
     TranslationPipe,
     HomeComponent,
     ToolbarComponent,
-    SettingsComponent
+    SettingsComponent,
+    SelectLanguageComponent
   ],
   imports: [
     BrowserModule,
