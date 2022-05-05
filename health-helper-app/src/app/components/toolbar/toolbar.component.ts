@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ContentChild, OnInit, TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocalStorageKey } from 'src/app/enums/local-storage.enum';
 import { AuthService } from 'src/app/services/authorization/auth.service';
@@ -11,6 +11,7 @@ import { TranslationService } from 'src/app/services/translation/translation-ser
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
+  @ContentChild('parent') hamburgerRef!: TemplateRef<any>;
 
   constructor(
     private authService: AuthService,
@@ -23,7 +24,6 @@ export class ToolbarComponent implements OnInit {
   }
 
   logout() {
-    console.log("xd");
     this.authService.logout().subscribe({
       next: () => {
         localStorage.removeItem(LocalStorageKey.SESSION_KEY);

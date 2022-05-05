@@ -8,6 +8,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +22,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SessionInterceptor } from './components/helpers/session-interceptor';
+import { SettingsComponent } from './components/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { SessionInterceptor } from './components/helpers/session-interceptor';
     LanguageSelectorComponent,
     TranslationPipe,
     HomeComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,9 @@ import { SessionInterceptor } from './components/helpers/session-interceptor';
     MatSnackBarModule,
     MatSelectModule,
     HttpClientModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [
     {
