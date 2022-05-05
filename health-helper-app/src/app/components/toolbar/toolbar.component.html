@@ -1,26 +1,29 @@
 <mat-toolbar>
     <mat-toolbar-row class="nav-menu">
+        <ng-container [ngTemplateOutlet]="hamburgerRef"></ng-container>
         <img class="menu-item" class="logo" src="../../../assets/logo/logo.svg">
-        <a class="menu-item" mat-button [routerLink]=""> {{'home' | translate}} </a>
-        <a class="menu-item" mat-button [routerLink]=""> {{'personal_health' | translate}} </a>
-        <a class="menu-item" mat-button [routerLink]=""> {{'supplements' | translate}} </a>
-        <a class="menu-item" mat-button [routerLink]=""> {{'exercises' | translate}} </a>
+        <a class="menu-item" mat-button routerLinkActive="active" routerLink="/user/home"> {{'home' | translate}} </a>
+        <a class="menu-item" mat-button routerLinkActive="active" [routerLink]=""> {{'personal_health' | translate}}
+        </a>
+        <a class="menu-item" mat-button routerLinkActive="active" [routerLink]=""> {{'supplements' | translate}} </a>
+        <a class="menu-item" mat-button routerLinkActive="active" [routerLink]=""> {{'exercises' | translate}} </a>
         <span class="spacer"></span>
-        <button class="menu-item" mat-icon-button [routerLink]="">
+        <button class="menu-item" mat-button routerLinkActive="active" routerLink="/user/settings">
             <mat-icon>settings</mat-icon>
         </button>
-        <button class="menu-item" mat-icon-button (click)="logout()">
+        <button class="menu-item" mat-button (click)="logout()">
             <mat-icon>logout</mat-icon>
         </button>
         <button class="hamburger" mat-button [matMenuTriggerFor]="menu">
             <mat-icon>menu</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="">{{'home' | translate}}</button>
+            <button mat-menu-item routerLink="/user/home">{{'home' | translate}}</button>
             <button mat-menu-item [routerLink]="">{{'personal_health' | translate}}</button>
             <button mat-menu-item [routerLink]="">{{'supplements' | translate}}</button>
             <button mat-menu-item [routerLink]="">{{'exercises' | translate}}</button>
-            <button mat-menu-item [routerLink]="">{{'settings' | translate}} <mat-icon>settings</mat-icon></button>
+            <button mat-menu-item routerLink="/user/settings">{{'settings' | translate}} <mat-icon>settings</mat-icon>
+            </button>
             <button mat-menu-item (click)="logout()">{{'logout' | translate}} <mat-icon>logout</mat-icon></button>
         </mat-menu>
     </mat-toolbar-row>
