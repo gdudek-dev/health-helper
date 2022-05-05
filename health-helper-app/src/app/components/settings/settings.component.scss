@@ -3,13 +3,12 @@
 }
 
 .settings-container {
-
     overflow: hidden;
     height: calc(100vh - 60px);
 
     .sidenav {
         height: calc(100vh - 95px);
-        background: #05a2a2;
+        background: #0c7a55;
         color: white;
         font-weight: 500;
         width: 10em;
@@ -18,25 +17,26 @@
         margin: 1em;
         text-align: center;
 
-
         mat-nav-list {
             padding: 0;
-
-            .lang-selector:hover,
-            .hamburger:hover {
-                filter: drop-shadow(7px 7px 7px rgb(65, 188, 237));
-            }
         }
 
-        .menu-button {
+        .menu-button,
+        .menu-button-hamburger {
             width: 100%;
             display: flex;
             justify-content: center;
             font-size: 1em;
+            padding-top: 1em;
+            padding-bottom: 1em;
 
             .icon_text {
                 margin-right: 0.5em;
             }
+        }
+
+        .menu-button-hamburger {
+            padding: 0em;
         }
     }
 
@@ -58,6 +58,12 @@
     }
 }
 
+mat-divider {
+    background-color: white;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
 .toolbar {
     .menu-item {
         margin-right: 1em;
@@ -66,4 +72,8 @@
             cursor: pointer;
         }
     }
+}
+
+.active {
+    color: #384B42 !important;
 }
