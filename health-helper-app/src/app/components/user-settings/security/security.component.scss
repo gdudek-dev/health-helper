@@ -2,12 +2,11 @@
 
     background: #075b66;
     border-radius: 0.5em;
-
     padding-bottom: 1em;
 
     h1 {
         padding-top: 0.3em;
-        font-size: 2vh;
+        font-size: 3.5vh;
         color: white;
     }
 }
@@ -41,6 +40,11 @@
     .mat-label {
         font-size: 0.5em;
     }
+}
+
+.mat-raised-button {
+    background-color: #075b66;
+    color: white;
 }
 
 .mat-action-row {

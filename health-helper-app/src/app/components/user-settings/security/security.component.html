@@ -26,8 +26,9 @@
                     <mat-label>{{'confirm_new_password' | translate}}</mat-label>
                     <input matInput formControlName="confirm_password" type="password">
                 </mat-form-field>
-                <mat-action-row>
-                    <button mat-button color="primary" (click)="changePassword()">{{'confirm' | translate}}</button>
+                <mat-action-row style="padding-top: 0.4em;">
+                    <button mat-raised-button (click)="changePassword()">{{'confirm' |
+                        translate}}</button>
                 </mat-action-row>
             </form>
         </mat-expansion-panel>
@@ -54,8 +55,8 @@
                     <mat-label>{{'enter_new_email' | translate}}</mat-label>
                     <input matInput formControlName="new_mail" type="email">
                 </mat-form-field>
-                <mat-action-row>
-                    <button mat-button color="primary" (click)="changeMail()">{{'confirm' | translate}}</button>
+                <mat-action-row style="padding-top: 0.4em;">
+                    <button mat-raised-button color="primary" (click)="changeMail()">{{'confirm' | translate}}</button>
                 </mat-action-row>
             </form>
         </mat-expansion-panel>

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { SendEmailRequest } from 'src/app/models/request/send-email-request.model';
 import { UpdateEmailRequest } from 'src/app/models/request/update-email-request.model';
 import { UpdatePasswordRequest } from 'src/app/models/request/update-password-request.model';
 import { User } from 'src/app/models/user/user.model';
@@ -45,6 +46,18 @@ export class UserService extends BaseCrudService<User> {
     return this.http.post<boolean>(
       this.apiUrl + '/update/email',
       updateEmailRequest
+    );
+  }
+
+  public sendEmail(from: string, subject: string, message: string): Observable<boolean> {
+    const sendEmailRequest = {} as SendEmailRequest;
+    sendEmailRequest.from = from;
+    sendEmailRequest.subject = subject;
+    sendEmailRequest.message = message;
+
+    return this.http.post<boolean>(
+      this.apiUrl + '/send/email',
+      sendEmailRequest
     );
   }
 }

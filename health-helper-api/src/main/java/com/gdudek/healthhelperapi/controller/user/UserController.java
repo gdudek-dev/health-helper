@@ -4,9 +4,11 @@ import com.gdudek.healthhelperapi.controller.GenericController;
 import com.gdudek.healthhelperapi.domain.user.UserEntity;
 import com.gdudek.healthhelperapi.dto.user.UserDTO;
 import com.gdudek.healthhelperapi.repository.GenericRepository;
+import com.gdudek.healthhelperapi.request.SendEmailRequest;
 import com.gdudek.healthhelperapi.request.UpdateEmailRequest;
 import com.gdudek.healthhelperapi.request.UpdatePasswordRequest;
 import com.gdudek.healthhelperapi.service.GenericMapper;
+import com.gdudek.healthhelperapi.service.email.EmailService;
 import com.gdudek.healthhelperapi.service.user.UserService;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.data.domain.Page;
@@ -23,10 +25,13 @@ import java.util.List;
 public class UserController extends GenericController<UserEntity, UserDTO> {
 
     private final UserService userService;
+    private final EmailService emailService;
 
-    public UserController(GenericRepository<UserEntity> repository, GenericMapper<UserEntity, UserDTO> mapper, UserService userService) {
+    public UserController(GenericRepository<UserEntity> repository, GenericMapper<UserEntity, UserDTO> mapper,
+                          UserService userService, EmailService emailService) {
         super(repository, mapper);
         this.userService = userService;
+        this.emailService = emailService;
     }
 
     @GetMapping("/page")
@@ -58,5 +63,10 @@ public class UserController extends GenericController<UserEntity, UserDTO> {
     @PostMapping("/update/email")
     public Boolean updateEmail(@RequestBody UpdateEmailRequest updateEmailRequest) {
         return this.userService.updateEmail(updateEmailRequest);
+    }
+
+    @PostMapping("/send/email")
+    public Boolean sendEmail(@RequestBody SendEmailRequest emailRequest) {
+        return emailService.sendEmail(emailRequest);
     }
 }

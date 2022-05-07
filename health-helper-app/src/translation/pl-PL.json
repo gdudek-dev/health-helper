@@ -41,5 +41,11 @@
     "change_your_email": "Zmień swój email",
     "wrong_current_password": "Wprowadzono złe obecne hasło",
     "password_updated": "Pomyślnie zmieniono hasło",
-    "email_updated": "Pomyślnie zmieniono email"
+    "email_updated": "Pomyślnie zmieniono email",
+    "send": "Wyślij",
+    "need_help": "Potrzebujesz pomocy?",
+    "send_us_message": "Wyślij nam wiadomość",
+    "enter_subject": "Wprowadź tytuł",
+    "enter_message": "Wprowadź wiadomość",
+    "email_send": "Pomyślnie wysłano wiadomość"
 }

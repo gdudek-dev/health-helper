@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/services/authorization/auth.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { TranslationService } from 'src/app/services/translation/translation-service';
 import { UserService } from 'src/app/services/user/user.service';
@@ -23,7 +22,6 @@ export class SecurityComponent implements OnInit {
   }
 
   constructor(
-    private authService: AuthService,
     private userService: UserService,
     private toastService: ToastService,
     private translationService: TranslationService
@@ -64,7 +62,7 @@ export class SecurityComponent implements OnInit {
                 this.toastService.showNotification(
                   this.translationService.getTranslation("password_updated")!,
                   this.translationService.getTranslation("cancel")!,
-                  "error");
+                  "success");
               } else {
                 this.toastService.showNotification(
                   this.translationService.getTranslation("wrong_current_password")!,
@@ -89,7 +87,7 @@ export class SecurityComponent implements OnInit {
               this.toastService.showNotification(
                 this.translationService.getTranslation("email_updated")!,
                 this.translationService.getTranslation("cancel")!,
-                "error");
+                "success");
             } else {
               this.toastService.showNotification(
                 this.translationService.getTranslation("wrong_current_password")!,

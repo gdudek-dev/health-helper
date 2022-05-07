@@ -41,5 +41,11 @@
     "change_your_email": "Change your email",
     "wrong_current_password": "Entered wrong current password",
     "password_updated": "Password updated successfully",
-    "email_updated": "Email updated successfully"
+    "email_updated": "Email updated successfully",
+    "send": "Send",
+    "need_help": "Need Help?",
+    "send_us_message": "Send us message",
+    "enter_subject": "Enter subject",
+    "enter_message": "Enter message",
+    "email_send": "Email send successfully"
 }
