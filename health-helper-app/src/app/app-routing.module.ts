@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { SecurityComponent } from './components/user-settings/security/security.component';
 import { SelectLanguageComponent } from './components/user-settings/select-language/select-language.component';
 import { SettingsComponent } from './components/user-settings/settings/settings.component';
 import { AdminAuthGuard } from './services/authorization/admin.auth.guard';
@@ -29,6 +30,10 @@ const routes: Routes = [
           {
             path: 'language',
             component: SelectLanguageComponent
+          },
+          {
+            path: 'security',
+            component: SecurityComponent
           },
         ]
       },

@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SessionInterceptor } from './components/helpers/session-interceptor';
 import { SettingsComponent } from './components/user-settings/settings/settings.component';
 import { SelectLanguageComponent } from './components/user-settings/select-language/select-language.component';
+import { SecurityComponent } from './components/user-settings/security/security.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { SelectLanguageComponent } from './components/user-settings/select-langu
     HomeComponent,
     ToolbarComponent,
     SettingsComponent,
-    SelectLanguageComponent
+    SelectLanguageComponent,
+    SecurityComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { SelectLanguageComponent } from './components/user-settings/select-langu
     HttpClientModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatExpansionModule
   ],
   providers: [
     {

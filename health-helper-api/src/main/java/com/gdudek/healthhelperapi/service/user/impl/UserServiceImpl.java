@@ -6,6 +6,7 @@ import com.gdudek.healthhelperapi.dto.user.UserInfoDTO;
 import com.gdudek.healthhelperapi.exception.NotFoundException;
 import com.gdudek.healthhelperapi.exception.user.EmailAlreadyTakenException;
 import com.gdudek.healthhelperapi.repository.user.UserRepository;
+import com.gdudek.healthhelperapi.request.UpdatePasswordRequest;
 import com.gdudek.healthhelperapi.service.user.UserService;
 import com.gdudek.healthhelperapi.service.user.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,6 +61,18 @@ public class UserServiceImpl implements UserService {
                 userRepository
                         .getUserBySessionKey(sessionKey)
                         .orElseThrow(NotFoundException::new));
+    }
+
+    @Override
+    public Boolean updatePassword(UpdatePasswordRequest updatePasswordRequest) {
+        UserEntity user = userRepository.getUserBySessionKey(updatePasswordRequest.getSessionKey()).orElseThrow(NotFoundException::new);
+        if(!passwordEncoder.matches(updatePasswordRequest.getPassword(),user.getPassword())) {
+            return false;
+        }
+        user.setPassword(passwordEncoder.encode(updatePasswordRequest.getNewPassword()));
+        userRepository.save(user);
+
+        return true;
     }
 
     private boolean isEmailTaken(String email) {

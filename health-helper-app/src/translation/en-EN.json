@@ -29,5 +29,16 @@
     "language": "Language",
     "help": "Help",
     "polish": "Polish",
-    "english": "English"
+    "english": "English",
+    "new_confirm_password_diffrent": "New and confirm passwords are diffrent",
+    "enter_current_password": "Enter current password",
+    "change_your_password": "Change your password",
+    "enter_new_password": "Enter new password",
+    "confirm_new_password": "Confirm new password",
+    "confirm": "Confirm",
+    "enter_current_email": "Enter current email",
+    "enter_new_email": "Enter new email",
+    "change_your_email": "Change your email",
+    "wrong_current_password": "Entered wrong current password",
+    "password_updated": "Password updated successfully"
 }

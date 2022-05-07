@@ -29,5 +29,16 @@
     "language": "Język",
     "help": "Pomoc",
     "polish": "Polski",
-    "english": "Angielski"
+    "english": "Angielski",
+    "new_confirm_password_diffrent": "Nowe hasło i jego potwierdzenie się różnią",
+    "enter_current_password": "Wprowadź obecne hasło",
+    "change_your_password": "Zmień swoje hasło",
+    "enter_new_password": "Wprowadź nowe hasło",
+    "confirm_new_password": "Potwierdź nowe hasło",
+    "confirm": "Potwierdź",
+    "enter_current_email": "Wprowadź obecny email",
+    "enter_new_email": "Wprowadź nowy email",
+    "change_your_email": "Zmień swój email",
+    "wrong_current_password": "Wprowadzono złe obecne hasło",
+    "password_updated": "Pomyślnie zmieniono hasło"
 }
