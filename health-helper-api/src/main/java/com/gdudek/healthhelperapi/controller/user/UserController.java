@@ -4,6 +4,7 @@ import com.gdudek.healthhelperapi.controller.GenericController;
 import com.gdudek.healthhelperapi.domain.user.UserEntity;
 import com.gdudek.healthhelperapi.dto.user.UserDTO;
 import com.gdudek.healthhelperapi.repository.GenericRepository;
+import com.gdudek.healthhelperapi.request.UpdateEmailRequest;
 import com.gdudek.healthhelperapi.request.UpdatePasswordRequest;
 import com.gdudek.healthhelperapi.service.GenericMapper;
 import com.gdudek.healthhelperapi.service.user.UserService;
@@ -52,5 +53,10 @@ public class UserController extends GenericController<UserEntity, UserDTO> {
     @PostMapping("/update/password")
     public Boolean updatePassword(@RequestBody UpdatePasswordRequest updatePasswordRequest) {
         return this.userService.updatePassword(updatePasswordRequest);
+    }
+
+    @PostMapping("/update/email")
+    public Boolean updateEmail(@RequestBody UpdateEmailRequest updateEmailRequest) {
+        return this.userService.updateEmail(updateEmailRequest);
     }
 }

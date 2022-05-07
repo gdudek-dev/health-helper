@@ -44,7 +44,7 @@ export class SecurityComponent implements OnInit {
 
   initNewMailForm() {
     this.newMailForm = new FormGroup({
-      current_mail: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required]),
       new_mail: new FormControl('', [Validators.required, Validators.email]),
     });
   }
@@ -73,10 +73,7 @@ export class SecurityComponent implements OnInit {
               }
             },
             error: () => {
-              this.toastService.showNotification(
-                this.translationService.getTranslation("unable_to_connect")!,
-                this.translationService.getTranslation("cancel")!,
-                "error");
+              this.unableToConnectError();
             }
           })
       }
@@ -84,6 +81,27 @@ export class SecurityComponent implements OnInit {
   }
 
   changeMail() {
+    if (this.newMailForm.valid) {
+      this.userService.updateEmail(this.newMailForm.get('password')?.value,
+        this.newMailForm.get('new_mail')?.value).subscribe({
+          next: (value) => {
+            if (value) {
+              this.toastService.showNotification(
+                this.translationService.getTranslation("email_updated")!,
+                this.translationService.getTranslation("cancel")!,
+                "error");
+            } else {
+              this.toastService.showNotification(
+                this.translationService.getTranslation("wrong_current_password")!,
+                this.translationService.getTranslation("cancel")!,
+                "error");
+            }
+          },
+          error: () => {
+            this.unableToConnectError();
+          }
+        })
+    }
   }
 
   arePasswordMatching(): boolean {
@@ -92,4 +110,12 @@ export class SecurityComponent implements OnInit {
     }
     return false;
   }
+
+  unableToConnectError() {
+    this.toastService.showNotification(
+      this.translationService.getTranslation("unable_to_connect")!,
+      this.translationService.getTranslation("cancel")!,
+      "error");
+  }
 }
+

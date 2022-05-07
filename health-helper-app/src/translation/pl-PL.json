@@ -40,5 +40,6 @@
     "enter_new_email": "Wprowadź nowy email",
     "change_your_email": "Zmień swój email",
     "wrong_current_password": "Wprowadzono złe obecne hasło",
-    "password_updated": "Pomyślnie zmieniono hasło"
+    "password_updated": "Pomyślnie zmieniono hasło",
+    "email_updated": "Pomyślnie zmieniono email"
 }

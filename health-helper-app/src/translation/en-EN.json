@@ -40,5 +40,6 @@
     "enter_new_email": "Enter new email",
     "change_your_email": "Change your email",
     "wrong_current_password": "Entered wrong current password",
-    "password_updated": "Password updated successfully"
+    "password_updated": "Password updated successfully",
+    "email_updated": "Email updated successfully"
 }

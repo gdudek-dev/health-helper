@@ -6,6 +6,7 @@ import com.gdudek.healthhelperapi.dto.user.UserInfoDTO;
 import com.gdudek.healthhelperapi.exception.NotFoundException;
 import com.gdudek.healthhelperapi.exception.user.EmailAlreadyTakenException;
 import com.gdudek.healthhelperapi.repository.user.UserRepository;
+import com.gdudek.healthhelperapi.request.UpdateEmailRequest;
 import com.gdudek.healthhelperapi.request.UpdatePasswordRequest;
 import com.gdudek.healthhelperapi.service.user.UserService;
 import com.gdudek.healthhelperapi.service.user.mapper.UserMapper;
@@ -65,14 +66,34 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Boolean updatePassword(UpdatePasswordRequest updatePasswordRequest) {
-        UserEntity user = userRepository.getUserBySessionKey(updatePasswordRequest.getSessionKey()).orElseThrow(NotFoundException::new);
-        if(!passwordEncoder.matches(updatePasswordRequest.getPassword(),user.getPassword())) {
+        UserEntity user = getUserEntityBySessionKey(updatePasswordRequest.getSessionKey());
+        if(!isPasswordCorrect(user, updatePasswordRequest.getPassword())) {
             return false;
         }
         user.setPassword(passwordEncoder.encode(updatePasswordRequest.getNewPassword()));
         userRepository.save(user);
 
         return true;
+    }
+
+    @Override
+    public Boolean updateEmail(UpdateEmailRequest updateEmailRequest) {
+        UserEntity user = getUserEntityBySessionKey(updateEmailRequest.getSessionKey());
+        if(!isPasswordCorrect(user, updateEmailRequest.getPassword())) {
+            return false;
+        }
+        user.setEmail(updateEmailRequest.getNewEmail());
+        userRepository.save(user);
+
+        return true;
+    }
+
+    private UserEntity getUserEntityBySessionKey(String sessionKey) {
+        return userRepository.getUserBySessionKey(sessionKey).orElseThrow(NotFoundException::new);
+    }
+
+    private boolean isPasswordCorrect(UserEntity user, String password) {
+       return passwordEncoder.matches(password,user.getPassword());
     }
 
     private boolean isEmailTaken(String email) {

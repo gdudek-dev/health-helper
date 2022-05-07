@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { UpdateEmailRequest } from 'src/app/models/request/update-email-request.model';
 import { UpdatePasswordRequest } from 'src/app/models/request/update-password-request.model';
 import { User } from 'src/app/models/user/user.model';
 import { BaseCrudService } from '../abstraction/base-crud.service';
@@ -23,15 +24,27 @@ export class UserService extends BaseCrudService<User> {
     return this.http.get<User>(this.apiUrl + '/session/logged');
   }
 
-  public updatePassword(current_password: string, new_password: string): Observable<boolean> {
+  public updatePassword(currentPassword: string, newPassword: string): Observable<boolean> {
     const updatePasswordRequest = {} as UpdatePasswordRequest;
     updatePasswordRequest.sessionKey = this.localStorageService.getSessionKey();
-    updatePasswordRequest.password = current_password;
-    updatePasswordRequest.newPassword = new_password;
+    updatePasswordRequest.password = currentPassword;
+    updatePasswordRequest.newPassword = newPassword;
 
     return this.http.post<boolean>(
       this.apiUrl + '/update/password',
       updatePasswordRequest
+    );
+  }
+
+  public updateEmail(password: string, newEmail: string): Observable<boolean> {
+    const updateEmailRequest = {} as UpdateEmailRequest;
+    updateEmailRequest.sessionKey = this.localStorageService.getSessionKey();
+    updateEmailRequest.newEmail = newEmail;
+    updateEmailRequest.password = password;
+
+    return this.http.post<boolean>(
+      this.apiUrl + '/update/email',
+      updateEmailRequest
     );
   }
 }
