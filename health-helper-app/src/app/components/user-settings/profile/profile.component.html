@@ -1,26 +1,26 @@
 <mat-spinner *ngIf="!isDataLoaded"></mat-spinner>
 
 <div class="container mat-elevation-z12" *ngIf="isDataLoaded">
-    <h1>Profile</h1>
+    <h1>{{'profile' | translate}}</h1>
     <mat-accordion class="headers-align">
         <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                    First and Last Name
+                    {{'first_and_last_name' | translate}}
                 </mat-panel-title>
                 <mat-panel-description>
-                    Change Your Name
+                    {{'change_your_name' | translate}}
                     <mat-icon>person</mat-icon>
                 </mat-panel-description>
             </mat-expansion-panel-header>
             <form [formGroup]="nameForm">
                 <mat-form-field style="margin-left: 7px ;">
-                    <mat-label>First Name</mat-label>
+                    <mat-label>{{'first_name' | translate}}</mat-label>
                     <input matInput formControlName="first_name" type="text">
                 </mat-form-field>
 
                 <mat-form-field>
-                    <mat-label>Last Name</mat-label>
+                    <mat-label>{{'last_name' | translate}}</mat-label>
                     <input matInput formControlName="last_name" type="text">
                 </mat-form-field>
                 <mat-action-row style="padding-top: 0.4em;">
@@ -35,34 +35,34 @@
         <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                    Data for BMI
+                    {{'data_for_bmi' | translate}}
                 </mat-panel-title>
                 <mat-panel-description>
-                    Change BMI data
+                    {{'change_bmi_data' | translate}}
                     <mat-icon>monitor_weight</mat-icon>
                 </mat-panel-description>
             </mat-expansion-panel-header>
             <form [formGroup]="dataForBMIForm">
                 <mat-form-field style="margin-left: 7px ;">
-                    <mat-label>Gender</mat-label>
+                    <mat-label>{{'gender' | translate}}</mat-label>
                     <mat-select formControlName="gender">
-                        <mat-option selected value="male">Male</mat-option>
-                        <mat-option value="female">Female</mat-option>
+                        <mat-option selected value="male">{{'male' | translate}}</mat-option>
+                        <mat-option value="female">{{'female' | translate}}</mat-option>
                     </mat-select>
                 </mat-form-field>
 
                 <mat-form-field>
-                    <mat-label>Weight [kg]</mat-label>
+                    <mat-label>{{'weight' | translate}} [kg]</mat-label>
                     <input matInput formControlName="weight" type="text" pattern="^[1-9]*(\.[0-9]{1,2})?$">
                 </mat-form-field>
 
                 <mat-form-field>
-                    <mat-label>Height [cm]</mat-label>
+                    <mat-label>{{'height' | translate}} [cm]</mat-label>
                     <input matInput formControlName="height" type="text" pattern="^[1-9]*(\.[0-9]{1,2})?$">
                 </mat-form-field>
 
                 <mat-form-field>
-                    <mat-label>Age</mat-label>
+                    <mat-label>{{'age' | translate}}</mat-label>
                     <input matInput formControlName="age" type="number">
                 </mat-form-field>
                 <mat-action-row style="padding-top: 0.4em;">

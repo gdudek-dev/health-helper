@@ -47,5 +47,16 @@
     "send_us_message": "Wyślij nam wiadomość",
     "enter_subject": "Wprowadź tytuł",
     "enter_message": "Wprowadź wiadomość",
-    "email_send": "Pomyślnie wysłano wiadomość"
+    "email_send": "Pomyślnie wysłano wiadomość",
+    "updated_successfully": "Pomyślnie zmieniono",
+    "first_and_last_name": "Imię i Nazwisko",
+    "change_your_name": "Zmień swoje imię i/lub nazwisko",
+    "data_for_bmi": "Dane do BMI",
+    "change_bmi_data": "Zmień dane do BMI",
+    "gender": "Płeć",
+    "male": "Mężczyzna",
+    "female": "Kobieta",
+    "weight": "Waga",
+    "height": "Wzrost",
+    "age": "Wiek"
 }
