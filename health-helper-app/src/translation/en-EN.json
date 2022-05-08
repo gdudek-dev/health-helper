@@ -58,5 +58,6 @@
     "female": "Female",
     "weight": "Weight",
     "height": "Height",
-    "age": "Age"
+    "age": "Age",
+    "select_language": "Select Language"
 }

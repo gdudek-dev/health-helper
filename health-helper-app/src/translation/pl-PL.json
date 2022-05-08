@@ -58,5 +58,6 @@
     "female": "Kobieta",
     "weight": "Waga",
     "height": "Wzrost",
-    "age": "Wiek"
+    "age": "Wiek",
+    "select_language": "Wybierz język"
 }

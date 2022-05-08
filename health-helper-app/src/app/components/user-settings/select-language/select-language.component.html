@@ -1,10 +1,13 @@
-<div class="container">
-    <button mat-button class="menu-button" (click)="setLang('PL')">
-        <img src="../../../assets/translation/pl-flag.png" />
-        <p>{{'polish' | translate}}</p>
-    </button>
-    <button mat-button class="menu-button" (click)="setLang('EN')">
-        <img src="../../../assets/translation/en-flag.png" />
-        <p>{{'english' | translate}}</p>
-    </button>
+<div class="container mat-elevation-z12">
+    <h1>{{'select_language' | translate}}</h1>
+    <div class="language">
+        <button mat-button class="menu-button" (click)="setLang('PL')">
+            <img src="../../../assets/translation/pl-flag.png" />
+            <p>{{'polish' | translate}}</p>
+        </button>
+        <button mat-button class="menu-button" (click)="setLang('EN')">
+            <img src="../../../assets/translation/en-flag.png" />
+            <p>{{'english' | translate}}</p>
+        </button>
+    </div>
 </div>
