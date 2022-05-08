@@ -73,11 +73,44 @@ export class ProfileComponent implements OnInit {
   }
 
   changeName() {
+    if (this.nameForm.valid) {
+      this.user.firstName = this.nameForm.get('first_name')?.value;
+      this.user.lastName = this.nameForm.get('last_name')?.value;
 
+      this.updateUser();
+    }
   }
 
   changeBMIdata() {
+    if (this.dataForBMIForm.valid) {
+      this.user.userInfoDTO.gender = this.dataForBMIForm.get('gender')?.value;
+      this.user.userInfoDTO.weight = this.dataForBMIForm.get('weight')?.value;
+      this.user.userInfoDTO.height = this.dataForBMIForm.get('height')?.value;
+      this.user.userInfoDTO.age = this.dataForBMIForm.get('age')?.value;
 
+      this.updateUser();
+    }
+  }
+
+  updateUser() {
+
+    console.log(this.user)
+    console.log(this.user.userInfoDTO)
+    this.userService.update(this.user).subscribe({
+      next: () => {
+        this.updateSuccessfully();
+      },
+      error: () => {
+        this.unableToConnectError();
+      }
+    })
+  }
+
+  updateSuccessfully() {
+    this.toastService.showNotification(
+      this.translationService.getTranslation("updated_successfully")!,
+      this.translationService.getTranslation("cancel")!,
+      "success");
   }
 
   unableToConnectError() {

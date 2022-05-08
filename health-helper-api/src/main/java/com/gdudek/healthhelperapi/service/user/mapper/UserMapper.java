@@ -19,6 +19,7 @@ public class UserMapper implements GenericMapper<UserEntity, UserDTO> {
                 .email(dtoEntity.getEmail())
                 .password(dtoEntity.getPassword())
                 .isAdmin(dtoEntity.getIsAdmin())
+                .session(dtoEntity.getSession() != null? sessionMapper.fromDTO(dtoEntity.getSession()): null)
                 .userInfo(userInfoMapper.fromDTO(dtoEntity.getUserInfoDTO()))
                 .build();
     }

@@ -63,7 +63,7 @@
 
                 <mat-form-field>
                     <mat-label>{{'age' | translate}}</mat-label>
-                    <input matInput formControlName="age" type="number">
+                    <input matInput formControlName="age" type="text" pattern="^[1-9]*">
                 </mat-form-field>
                 <mat-action-row style="padding-top: 0.4em;">
                     <button mat-raised-button color="primary" (click)="changeBMIdata()">{{'confirm' |
