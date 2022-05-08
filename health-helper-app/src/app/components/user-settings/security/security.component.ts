@@ -13,8 +13,6 @@ export class SecurityComponent implements OnInit {
 
   public newPasswordForm!: FormGroup;
   public newMailForm!: FormGroup;
-  public passwordFormSubmitted: boolean = false;
-  public emailFormSubmitted: boolean = false;
   step: number = 0;
 
   setStep(stepNumb: number) {

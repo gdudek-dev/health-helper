@@ -1,4 +1,4 @@
-import { UserInfo } from "./user-info.model";
+import { UserInfoDTO } from "./user-info.model";
 
 export interface User {
     id: number;
@@ -6,5 +6,5 @@ export interface User {
     lastName: string;
     password: string;
     email: string;
-    userInfo: UserInfo;
+    userInfoDTO: UserInfoDTO;
 }
