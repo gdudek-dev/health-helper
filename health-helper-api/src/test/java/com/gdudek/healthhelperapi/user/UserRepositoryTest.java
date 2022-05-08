@@ -21,7 +21,7 @@ class UserRepositoryTest {
     @BeforeEach
     void setUp() {
         user = new UserEntity(1L,"Tony","Test","Test321","Test",null,false, null);
-        userInfo = new UserInfo(1L,22,"Men",180,user);
+        userInfo = new UserInfo(1L,22,"Men",180,120,user);
         user.setUserInfo(userInfo);
     }
 

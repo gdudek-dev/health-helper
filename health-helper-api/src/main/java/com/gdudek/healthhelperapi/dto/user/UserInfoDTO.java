@@ -12,4 +12,5 @@ public class UserInfoDTO {
     private int age;
     private String gender;
     private float height;
+    private float weight;
 }
