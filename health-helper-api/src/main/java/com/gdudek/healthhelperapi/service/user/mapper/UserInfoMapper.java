@@ -15,6 +15,7 @@ public class UserInfoMapper implements GenericMapper<UserInfo, UserInfoDTO> {
                 .age(dtoEntity.getAge())
                 .gender(dtoEntity.getGender())
                 .height(dtoEntity.getHeight())
+                .weight(dtoEntity.getWeight())
                 .build();
     }
 
@@ -25,6 +26,7 @@ public class UserInfoMapper implements GenericMapper<UserInfo, UserInfoDTO> {
                 .age(dbEntity.getAge())
                 .gender(dbEntity.getGender())
                 .height(dbEntity.getHeight())
+                .weight(dbEntity.getWeight())
                 .build();
     }
 }

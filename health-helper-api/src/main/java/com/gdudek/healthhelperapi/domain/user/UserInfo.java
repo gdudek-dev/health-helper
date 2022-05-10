@@ -27,6 +27,9 @@ public class UserInfo {
     @Column(name = "height")
     private float height;
 
-    @OneToOne(mappedBy = "userInfo")
+    @Column(name = "weight")
+    private float weight;
+
+    @OneToOne(mappedBy = "userInfo", orphanRemoval=true)
     private UserEntity user;
 }

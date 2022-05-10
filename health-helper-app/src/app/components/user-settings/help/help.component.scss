@@ -1,0 +1,45 @@
+.mat-card {
+    width: 46vw;
+    height: 71vh;
+    border-radius: 0.5em;
+    background: #075b66;
+    color: white;
+}
+
+.mat-card-subtitle {
+    color: white;
+}
+
+.mat-card-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.mat-form-field {
+    width: 80%;
+    color: black;
+}
+
+button {
+    width: 80%;
+}
+
+.mat-divider {
+    border-top-color: white;
+}
+
+form {
+    background-color: white;
+    border-radius: 0.5em;
+    margin-top: 2em;
+    padding-top: 1.5vh;
+    padding-bottom: 0.5vh;
+}
+
+.mat-raised-button {
+    color: white;
+    background-color: #075b66;
+}

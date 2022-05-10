@@ -1,0 +1,19 @@
+<mat-card class="mat-elevation-z12">
+    <mat-card-title>{{'need_help' | translate}}</mat-card-title>
+    <mat-card-subtitle>{{'send_us_message' | translate}}</mat-card-subtitle>
+    <mat-divider></mat-divider>
+    <form [formGroup]="emailForm">
+        <mat-card-actions>
+            <mat-form-field appearance="fill">
+                <mat-label>{{'enter_subject' | translate}}</mat-label>
+                <input matInput formControlName="subject" type="text">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>{{'enter_message' | translate}}</mat-label>
+                <textarea style="overflow:auto;resize:none" matInput formControlName="message" cols="30"
+                    rows="6"></textarea>
+            </mat-form-field>
+            <button mat-raised-button (click)="sendEmail()">{{'send' | translate}}</button>
+        </mat-card-actions>
+    </form>
+</mat-card>

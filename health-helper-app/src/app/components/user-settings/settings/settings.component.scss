@@ -8,7 +8,7 @@
 
     .sidenav {
         height: calc(100vh - 95px);
-        background: #0c7a55;
+        background: #075b66;
         color: white;
         font-weight: 500;
         width: 10em;
@@ -55,6 +55,9 @@
         margin-left: 2em;
         border-radius: 0.5em;
         display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #68EDCB;
     }
 }
 
@@ -75,5 +78,5 @@ mat-divider {
 }
 
 .active {
-    color: #384B42 !important;
+    color: #95F7B1 !important;
 }

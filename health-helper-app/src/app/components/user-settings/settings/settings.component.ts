@@ -17,13 +17,11 @@ export class SettingsComponent implements OnInit, AfterViewInit {
   public opened!: boolean;
 
   constructor(
-    private localStorageService: LocalStorageService,
     private observer: BreakpointObserver,
     private cd: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
-    this.lang = this.getLang();
   }
 
   ngAfterViewInit() {
@@ -38,15 +36,5 @@ export class SettingsComponent implements OnInit, AfterViewInit {
     });
 
     this.cd.detectChanges();
-  }
-
-  getLang = (): string => {
-    return this.localStorageService.getLanguage();
-  };
-
-  setLang(value: any) {
-    this.lang = value;
-    this.localStorageService.Language = value;
-    window.location.reload();
   }
 }

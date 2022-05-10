@@ -10,6 +10,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +27,12 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SessionInterceptor } from './components/helpers/session-interceptor';
-import { SettingsComponent } from './components/settings/settings.component';
+import { SettingsComponent } from './components/user-settings/settings/settings.component';
+import { SelectLanguageComponent } from './components/user-settings/select-language/select-language.component';
+import { SecurityComponent } from './components/user-settings/security/security.component';
+import { HelpComponent } from './components/user-settings/help/help.component';
+import { ProfileComponent } from './components/user-settings/profile/profile.component';
+import { DeleteUserDialogComponent } from './components/user-settings/profile/delete-user-dialog/delete-user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +43,12 @@ import { SettingsComponent } from './components/settings/settings.component';
     TranslationPipe,
     HomeComponent,
     ToolbarComponent,
-    SettingsComponent
+    SettingsComponent,
+    SelectLanguageComponent,
+    SecurityComponent,
+    HelpComponent,
+    ProfileComponent,
+    DeleteUserDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +65,12 @@ import { SettingsComponent } from './components/settings/settings.component';
     HttpClientModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatExpansionModule,
+    MatCardModule,
+    MatProgressSpinnerModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [
     {

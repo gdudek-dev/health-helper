@@ -1,0 +1,64 @@
+<div class="container mat-elevation-z12">
+    <h1>Security</h1>
+    <mat-accordion class="headers-align">
+        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{'password' | translate}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{'change_your_password' | translate}}
+                    <mat-icon>password</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <form [formGroup]="newPasswordForm">
+                <mat-form-field style="margin-left: 7px ;">
+                    <mat-label>{{'enter_current_password' | translate}}</mat-label>
+                    <input matInput formControlName="current_password" type="password">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>{{'enter_new_password' | translate}}</mat-label>
+                    <input matInput formControlName="new_password" type="password">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>{{'confirm_new_password' | translate}}</mat-label>
+                    <input matInput formControlName="confirm_password" type="password">
+                </mat-form-field>
+                <mat-action-row style="padding-top: 0.4em;">
+                    <button mat-raised-button (click)="changePassword()">{{'confirm' |
+                        translate}}</button>
+                </mat-action-row>
+            </form>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion class="headers-align">
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{'email' | translate}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{'change_your_email' | translate}}
+                    <mat-icon>mail</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <form [formGroup]="newMailForm">
+                <mat-form-field style="margin-left: 7px ;">
+                    <mat-label>{{'enter_current_password' | translate}}</mat-label>
+                    <input matInput formControlName="password" type="password">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>{{'enter_new_email' | translate}}</mat-label>
+                    <input matInput formControlName="new_mail" type="email">
+                </mat-form-field>
+                <mat-action-row style="padding-top: 0.4em;">
+                    <button mat-raised-button color="primary" (click)="changeMail()">{{'confirm' | translate}}</button>
+                </mat-action-row>
+            </form>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

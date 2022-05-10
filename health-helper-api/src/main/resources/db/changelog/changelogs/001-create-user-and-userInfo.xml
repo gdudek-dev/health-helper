@@ -32,12 +32,10 @@
             <column name="id" type="bigserial">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="age" type="int">
-            </column>
-            <column name="gender" type="varchar(30)">
-            </column>
-            <column name="height" type="int">
-            </column>
+            <column name="age" type="int"/>
+            <column name="gender" type="varchar(30)"/>
+            <column name="height" type="float"/>
+            <column name="weight" type="float"/>
         </createTable>
     </changeSet>
 
