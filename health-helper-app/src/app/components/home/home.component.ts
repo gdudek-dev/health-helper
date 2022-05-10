@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRandomQuote();
-    // this.getUser();
+    this.getUser();
   }
 
   getRandomQuote() {

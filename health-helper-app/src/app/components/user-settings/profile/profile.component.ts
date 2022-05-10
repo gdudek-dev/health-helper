@@ -3,7 +3,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user/user.model';
-import { AuthService } from 'src/app/services/authorization/auth.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { TranslationService } from 'src/app/services/translation/translation-service';
 import { UserService } from 'src/app/services/user/user.service';

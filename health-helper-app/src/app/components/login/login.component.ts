@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     ) {
       this.authService.isSessionKeyIsAlive().subscribe((res) => {
         if (res) {
-          this.router.navigate(['home']);
+          this.router.navigate(['user/home']);
         }
       });
     }
@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
           res.isAdmin,
           localStorage
         );
-        this.router.navigate(['home'])
+        this.router.navigate(['user/home'])
       },
       (error) => {
         if (error.status === 0) {
