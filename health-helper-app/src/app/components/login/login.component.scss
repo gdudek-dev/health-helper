@@ -18,7 +18,7 @@
         text-align: center;
 
         .sign-in {
-            margin-top: 8em;
+            margin-top: 6em;
             margin-left: 10em;
             display: flex;
             flex-direction: column;
@@ -110,8 +110,7 @@
 @media(max-width:1180px) {
     #logo {
         width: 30em;
-        margin-top: 20em;
-
+        margin-top: 21em;
     }
 }
 
@@ -119,7 +118,6 @@
     #logo {
         padding-left: 1em;
         width: 25em;
-        margin-top: 22em;
     }
 }
 
@@ -145,12 +143,16 @@
 }
 
 @media(max-width:580px) {
+    #background {
+        background: linear-gradient(71.96deg, #00CACA 30%, #68EDCB 110.99%, #68EDCB 150%, #00BEFF 180.23%);
+    }
+
     #logo {
-        left: 8em;
+        left: 7em;
     }
 
     #sign-in {
-        margin-left: 5em;
+        margin-left: 3em;
     }
 }
 

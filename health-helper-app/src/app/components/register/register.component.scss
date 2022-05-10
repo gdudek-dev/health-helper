@@ -19,7 +19,7 @@
     .row {
 
         .sign-up-form {
-            margin-top: 8em;
+            margin-top: 6em;
             margin-left: 10em;
             display: flex;
             flex-direction: column;
@@ -79,29 +79,27 @@
                 }
             }
         }
+
+        .logo {
+            margin-right: 4em;
+            margin-top: 18em;
+            width: 55em;
+        }
     }
 
 }
 
-.logo {
-    margin-right: 4em;
-    margin-top: 20em;
-    width: 55em;
-}
-
 @media(max-width:1400px) {
     #logo {
-        width: 40em;
-        margin-top: 21em;
+        width: 40em
     }
 }
 
 
 @media(max-width:1180px) {
     #logo {
-        padding-left: 2em;
         width: 30em;
-        margin-top: 22em;
+        margin-top: 21em;
     }
 }
 
@@ -109,7 +107,6 @@
     #logo {
         padding-left: 1em;
         width: 25em;
-        margin-top: 24em;
     }
 }
 
@@ -120,40 +117,41 @@
     }
 }
 
+
 @media(max-width:875px) {
     #logo {
         position: absolute;
-        top: -22em;
+        top: -20em;
         left: 14em;
         width: 20em;
     }
 
     #background {
-        background: linear-gradient(71.96deg, #00CACA 20%, #68EDCB 100.99%, #68EDCB 120%, #00BEFF 130.23%);
+        background: linear-gradient(71.96deg, #00CACA 10%, #68EDCB 90.99%, #68EDCB 120%, #00BEFF 130.23%);
     }
 }
 
 @media(max-width:580px) {
+    #background {
+        background: linear-gradient(71.96deg, #00CACA 30%, #68EDCB 110.99%, #68EDCB 150%, #00BEFF 180.23%);
+    }
+
     #logo {
-        left: 8em;
+        left: 7em;
     }
 
     #sign-up {
-        margin-left: 5em;
+        margin-left: 3em;
     }
 }
 
 @media(max-width:450px) {
     #logo {
-        left: 5em;
+        left: 4em;
     }
 
     #sign-up {
         margin-left: 2em;
-    }
-
-    #background {
-        background: linear-gradient(71.96deg, #00CACA 30%, #68EDCB 110.99%, #68EDCB 120%, #00BEFF 130.23%);
     }
 }
 
