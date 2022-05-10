@@ -28,7 +28,7 @@ public class SessionEntity {
     @Column(name = "has_do_not_logout")
     private Boolean hasDoNotLogout;
 
-    @OneToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY, orphanRemoval = false)
+    @OneToOne(fetch = FetchType.LAZY,orphanRemoval=true)
     @JoinColumn(name = "user_id")
     private UserEntity user;
 }

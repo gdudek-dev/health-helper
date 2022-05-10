@@ -14,6 +14,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +32,7 @@ import { SelectLanguageComponent } from './components/user-settings/select-langu
 import { SecurityComponent } from './components/user-settings/security/security.component';
 import { HelpComponent } from './components/user-settings/help/help.component';
 import { ProfileComponent } from './components/user-settings/profile/profile.component';
+import { DeleteUserDialogComponent } from './components/user-settings/profile/delete-user-dialog/delete-user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { ProfileComponent } from './components/user-settings/profile/profile.com
     SelectLanguageComponent,
     SecurityComponent,
     HelpComponent,
-    ProfileComponent
+    ProfileComponent,
+    DeleteUserDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +69,8 @@ import { ProfileComponent } from './components/user-settings/profile/profile.com
     MatExpansionModule,
     MatCardModule,
     MatProgressSpinnerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [
     {

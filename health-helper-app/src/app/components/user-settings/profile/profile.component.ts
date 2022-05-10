@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/user/user.model';
+import { AuthService } from 'src/app/services/authorization/auth.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { TranslationService } from 'src/app/services/translation/translation-service';
 import { UserService } from 'src/app/services/user/user.service';
+import { DeleteUserDialogComponent } from './delete-user-dialog/delete-user-dialog.component';
 
 @Component({
   selector: 'app-profile',
@@ -26,6 +30,8 @@ export class ProfileComponent implements OnInit {
     private toastService: ToastService,
     private translationService: TranslationService,
     private userService: UserService,
+    private dialog: MatDialog,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -92,10 +98,24 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  updateUser() {
+  deleteAccount() {
+    const dialogRef = this.dialog.open(DeleteUserDialogComponent);
 
-    console.log(this.user)
-    console.log(this.user.userInfoDTO)
+    dialogRef.afterClosed().subscribe(result => {
+      if (result == true) {
+        this.userService.deleteById(this.user.id).subscribe({
+          next: () => {
+            this.router.navigate(['login'])
+          },
+          error: () => {
+            this.unableToConnectError();
+          }
+        })
+      }
+    });
+  }
+
+  updateUser() {
     this.userService.update(this.user).subscribe({
       next: () => {
         this.updateSuccessfully();

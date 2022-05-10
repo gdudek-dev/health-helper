@@ -31,14 +31,14 @@ public class UserEntity {
     @Column(name = "password")
     private String password;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "user_info_id", referencedColumnName = "id")
     private UserInfo userInfo;
 
     @Column(name = "is_admin")
     private Boolean isAdmin;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval=true, mappedBy = "user")
     @JoinColumn(name = "session_id")
     private SessionEntity session;
 }

@@ -30,6 +30,6 @@ public class UserInfo {
     @Column(name = "weight")
     private float weight;
 
-    @OneToOne(mappedBy = "userInfo")
+    @OneToOne(mappedBy = "userInfo", orphanRemoval=true)
     private UserEntity user;
 }
